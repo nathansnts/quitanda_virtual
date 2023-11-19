@@ -1,6 +1,5 @@
 import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:quitanda_virtual/src/config/custom_colors.dart';
 import 'package:quitanda_virtual/src/models/currency_formatter.dart';
 import 'package:quitanda_virtual/src/pages/home/components/category_tile.dart';

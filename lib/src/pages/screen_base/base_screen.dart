@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:quitanda_virtual/src/config/custom_colors.dart';
 import 'package:quitanda_virtual/src/pages/cart/cart_page.dart';
 import 'package:quitanda_virtual/src/pages/home/home_page.dart';
+import 'package:quitanda_virtual/src/pages/profile/profile_page.dart';
+
+import '../orders/order_page.dart';
 
 class BaseScreen extends StatefulWidget {
   const BaseScreen({super.key});
@@ -27,15 +30,11 @@ class _BaseScreenState extends State<BaseScreen> {
       body: PageView(
         physics: const NeverScrollableScrollPhysics(),
         controller: _controller,
-        children: [
-          const HomePage(),
+        children: const [
+          HomePage(),
           CartPage(),
-          Container(
-            color: Colors.yellowAccent,
-          ),
-          Container(
-            color: Colors.blue,
-          ),
+          OrderPage(),
+          ProfilePage(),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(

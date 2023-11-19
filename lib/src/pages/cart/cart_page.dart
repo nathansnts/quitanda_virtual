@@ -185,7 +185,63 @@ class _CartPageState extends State<CartPage> {
                   child: ButtonConfirm(
                     title: 'Confirmar pedido',
                     colorButton: CustomColors.customContrastsColor,
-                    onPressedConfirm: () {},
+                    onPressedConfirm: () => showDialog<String>(
+                      context: context,
+                      barrierDismissible: false,
+                      builder: (context) => AlertDialog(
+                        shape: const RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(25),
+                          ),
+                        ),
+                        title: const Text(
+                          'Confirmação do pedido',
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        content: const Text(
+                          'Deseja confirmar o pedido?',
+                          style: TextStyle(
+                            fontSize: 18,
+                          ),
+                        ),
+                        actions: [
+                          TextButton(
+                            style: ButtonStyle(
+                              backgroundColor: MaterialStateProperty.all(
+                                  CustomColors.customContrastsColor),
+                              shape: MaterialStateProperty.all(
+                                RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15),
+                                ),
+                              ),
+                            ),
+                            onPressed: () {},
+                            child: const Text(
+                              'Sim',
+                              style: TextStyle(
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white),
+                            ),
+                          ),
+                          TextButton(
+                            onPressed: () {
+                              Navigator.pop(context, 'Não');
+                            },
+                            child: Text(
+                              'Não',
+                              style: TextStyle(
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.bold,
+                                  color: CustomColors.customContrastsColor),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
                 ),
               ],

@@ -1,5 +1,6 @@
 import 'package:quitanda_virtual/src/models/item_cart.dart';
 import 'package:quitanda_virtual/src/models/item_model.dart';
+import 'package:quitanda_virtual/src/models/order_model.dart';
 
 //Mock: são dados fixos da aplicação
 ItemModel apple = ItemModel(
@@ -79,4 +80,18 @@ List<ItemCart> itemsCart = [
   ItemCart(item: apple, quantity: 3),
   ItemCart(item: mango, quantity: 3),
   ItemCart(item: grape, quantity: 3),
+];
+
+List<OrderModel> orders = [
+  OrderModel(
+    copyAndPaste: 'avav334w',
+    createDateTime: DateTime.parse('2023-11-16 19:52:01'),
+    id: '1',
+    status: 'pending_payment',
+    total: 12.00,
+    items: [
+      ItemCart(item: mango, quantity: 2),
+    ],
+    overdueDateTime: DateTime.parse('2023-11-16 19:52:01'),
+  ),
 ];

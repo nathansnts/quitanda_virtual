@@ -20,6 +20,7 @@ class ButtonConfirm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //Definindo um botão personalizável com bordas arredondadas
+
     return SizedBox(
       height: 45,
       width: MediaQuery.of(context).size.width,
@@ -35,7 +36,15 @@ class ButtonConfirm extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            icon != null ? Icon(icon) : const Text(''),
+            icon != null
+                ? Icon(
+                    icon,
+                    color: colorText,
+                  )
+                : const Text(''),
+            const SizedBox(
+              width: 5,
+            ),
             Text(
               title,
               style: TextStyle(
